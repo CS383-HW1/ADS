@@ -344,6 +344,78 @@ when you hold still, and attack everything at the same time as you, so it is har
 
 \end{subsection}
 
+Player tasks: (Tessa Saul)
+
+moving through areas 
+------------------
+leveling up
+------------------
+crafting items
+
+Actor: Player
+
+Precondition: The player has the necessary ingredients to make a crafted item
+
+Summary: The PLayer takes ingredients for a crafted item and expends them to recieve a different item
+
+Steps:
+1. Player opens crafting menu
+2. Player selects crafting recipe
+3. The items for the recipe are destroyed
+4. The crafted item is placed in the player's inventory
+------------------
+selling items
+
+Actor: Shopkeeper and player
+
+Preconditions: The player has an item that the shopkeeper is willing to buy. The shopkeeper has sufficient
+currency for the transaction
+
+Summary: Player exchanges an item for currency with a shopkeeper
+
+Steps: 
+1. Player approaches shopkeeper
+2. Player engages shop
+3. Player selects item from their inventory to sell
+4. Item is given to shopkeeper, currency is taken from shopkeeper and given to player
+------------------
+buying items
+
+Actor: Shopkeeper and player
+
+Preconditions: The shopkeeper has an item that the player is willing to buy. The player has sufficient
+currency for the transaction
+
+Summary: Player exchanges an currency for item with a shopkeeper
+
+Steps: 
+1. Player approaches shopkeeper
+2. Player engages shop
+3. Player selects item from shopkeeper's inventory to buy
+4. Item is given to player, currency is taken from player and given to shopkeeper
+------------------
+picking up items
+
+Actor: Player
+
+Precondition: The player has an empty slot big enough for the item in their inventory
+
+Summary: A player's action transfers an item from the environment into their inventory
+
+Steps:
+1. Player approaches item
+2. Player engages item
+3. Item is removed from environment
+4. Item is placed in the player's  inventory
+------------------
+dialog
+------------------
+attacking
+------------------
+opening doors
+------------------
+
+
 \end{section}
 
 

@@ -427,10 +427,20 @@ additional unnecessary communication.
 Player tasks: (Tessa Saul)
 
 moving through areas 
+
+Actor: Player
+
+Preconditions: The player has the area being moved to unlocked or available to him.
+
+Summary: The player accepts a prompt moving him to a new dungeon, floor, or back to the lobby.
+
+Steps:
+1. The player uses an object (door/computer).
+2. Player hits yes to the prompt on whether or not to use it.
+3. The player is moved from the current location to the new location.
+4. The new level is constructed (if a dungeon), or loaded (if the lobby) and the player is placed in it.
 ------------------
-leveling up
-------------------
-crafting items
+crafting items % Morgan Holbart
 
 Actor: Player
 
@@ -488,13 +498,91 @@ Steps:
 3. Item is removed from environment
 4. Item is placed in the player's  inventory
 ------------------
-dialog
+dialog % Morgan Holbart
+
+Actors: Player and NPC
+
+Preconditions:
+1. The player is currently able to interact with the target
+2. The target wishes to interact with the player
+3. The NPC has something to say
+
+Summary: A player tries to initiate conversation with an NPC
+
+Steps:
+1. The player interacts with the NPC
+2. The NPC responds to the player
+3. The player can respond based on user input
+4. When the NPC runs out of things to say, the dialog ends
 ------------------
-attacking
+attacking % Morgan Holbart
+
+Actor: Player
+
+Preconditions:
+1. Player has a valid weapon to use equipped
+2. Player has ammo or durability to use equipped weapon
+3. Player is able to attack (not in a current dialog/other interaction)
+
+Steps:
+1. The player presses the input to attack
+2. Ammunition/Durability is subtracted
+3. The weapon animation/effects/etc are instantiated
 ------------------
 opening doors
 ------------------
+opening inventory/closing inventory % Morgan Holbart
 
+Actor: Player
+
+Preconditions: 
+1. Player can currently perform the action of opening/closing inventory
+
+Steps:
+1. The player presses the input to open/close the inventory
+2. The inventory is loaded and displayed or closed 
+------------------
+starting game % Morgan Holbart
+
+Actor: User
+
+Preconditions: 
+1. Player is in the menu
+2. Player is selecting the start game button
+
+Steps:
+1. The player presses the input to start the game
+2. The game loads the user save data
+3. The game loads the lobby level with regard to the user save data
+------------------
+Reload Weapon? % Morgan Holbart
+
+Actor: Player
+
+Preconditions: 
+1. Player has a weapon equipped that can reload
+2. Player has ammo to reload with
+
+Steps:
+1. Press the reload button
+2. Subtract ammo from the stored ammo
+3. Add the subtracted ammo to the current ammo
+-----------------
+Start Dungeon % Morgan Holbart
+
+Actor : Dungeon Leader(Player)
+
+Preconditions:
+1. Player is the leader of a dungeon group
+2. Player is currently connected with all party members
+3. Party members have all selected the ready button
+4. Party members all have adequate reputation to do the dungeon
+
+Steps:
+1. Player interacts with the computer he wishes to enter
+2. All other players are in party already, or join the party through the computer
+3. The party leader presses the start dungeon button.
+----------------
 
 \end{section}
 
